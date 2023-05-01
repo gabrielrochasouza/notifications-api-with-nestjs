@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import Content from './content';
-import { Replace } from 'src/helpers/replace';
+import { Replace } from '@helpers/replace';
 
 export interface NotificationProps {
   category: string;
@@ -12,7 +12,7 @@ export interface NotificationProps {
 }
 
 export default class Notification {
-  private props: NotificationProps;
+  public props: NotificationProps;
   private _id: string;
 
   constructor(
@@ -72,5 +72,10 @@ export default class Notification {
 
   read() {
     this.props.readAt = new Date();
+  }
+
+  unread() {
+    this.props.readAt = null;
+    this.props.cancelAt = new Date();
   }
 }

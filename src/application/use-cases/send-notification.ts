@@ -4,7 +4,7 @@ import Notification from '../entities/notification';
 import { NotificationRepository } from '../repositories/notifications-repository';
 
 export interface ISendNotification {
-  content: string;
+  content: Content;
   category: string;
   recipientId: string;
 }
@@ -23,7 +23,7 @@ export class SendNotification {
     const { category, content, recipientId } = notificationInfo;
     const notification = new Notification({
       category,
-      content: new Content(content),
+      content: new Content(content.value),
       recipientId,
     });
     this.repository.create(notification);
