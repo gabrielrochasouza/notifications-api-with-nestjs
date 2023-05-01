@@ -1,3 +1,35 @@
+# Rotas:
+
+### Find Many By Recipient ID /notifications/:recipientID(UUID)
+GET http://localhost:3000/notifications/acc8fba0-e7bc-11ed-a05b-0242ac120003
+
+
+### Count How Many By Recipient ID /notifications/count/:recipientID(UUID)
+GET http://localhost:3000/notifications/count/aacc8fba0-e7bc-11ed-a05b-0242ac120003
+
+
+### Read message /notifications/:notificationID(UUID)
+PATCH http://localhost:3000/notifications/read/c5ac3772-83de-4a56-bc55-d1110bb020a8
+
+
+### Unread message /notifications/:notificationID(UUID)
+PATCH http://localhost:3000/notifications/unread/c5ac3772-83de-4a56-bc55-d1110bb020a8
+
+
+### Sending notification /notifications/create
+POST http://localhost:3000/notifications/create
+
+Content-Type: application/json
+
+```
+## Body request example:
+{
+    "content": "New Content",
+    "category": "New Category",
+    "recipientId": "acc8fba0-e7bc-11ed-a05b-0242ac120003"
+}
+```
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
