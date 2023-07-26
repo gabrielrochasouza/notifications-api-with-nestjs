@@ -28,8 +28,6 @@ export class PrismaRepository implements NotificationRepository {
 
   async save(notification: Notification): Promise<Notification> {
     const raw = NotificationMapper.toPrisma(notification);
-    console.log(raw.id);
-    console.log(raw);
     await this.prismaService.notifications.update({
       where: {
         id: raw.id,
@@ -41,7 +39,6 @@ export class PrismaRepository implements NotificationRepository {
         content: raw.content,
       },
     });
-    console.log('aqui');
     return notification;
   }
 
