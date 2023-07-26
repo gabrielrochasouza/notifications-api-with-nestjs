@@ -1,6 +1,8 @@
 # Rotas:
 
-This is an API made to manage notifications.
+This is an API made to manage notifications. It was used a sqlite database, but the database can be easily to changed in the `prisma/schema.prisma` file.
+
+It was also made tests using jest.
 
 ### FindMany By Recipient ID /notifications/:recipientID(UUID)
 GET http://localhost:3000/notifications/acc8fba0-e7bc-11ed-a05b-0242ac120003
@@ -23,8 +25,8 @@ POST http://localhost:3000/notifications/create
 
 Content-Type: application/json
 
-```
 ## Body request example:
+```
 {
     "content": "New Content",
     "category": "New Category",
