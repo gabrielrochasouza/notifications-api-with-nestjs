@@ -1,6 +1,8 @@
 # Rotas:
 
-### Find Many By Recipient ID /notifications/:recipientID(UUID)
+This is an API made to manage notifications.
+
+### FindMany By Recipient ID /notifications/:recipientID(UUID)
 GET http://localhost:3000/notifications/acc8fba0-e7bc-11ed-a05b-0242ac120003
 
 
